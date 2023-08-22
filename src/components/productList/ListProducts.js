@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
 import Filters from './filters';
-
-
+import ProductDetails from '../ProductDetails';
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -13,8 +12,14 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
-
 const ListProducts = (props) => {
+  
+  const [ productDetails,setProductDetails]= useState(false);
+	const handleViewDetails= (id) => {
+		
+		setProductDetails(true);
+      props.handleViewDetailsClick(id)
+	}
     return(
         <div>
 			<div style={{display: `inline-block`, width: `20%`, position: `fixed`}}>
@@ -36,7 +41,8 @@ const ListProducts = (props) => {
 											<label>{`$ ${item.price}`}</label>
 											<span style={{marginLeft: 15}}>{item.rating?.rate}</span>
 										</div>
-										<a href='/product-details'>View details</a>
+										{/* <a href='/product-details'>View details</a> */}
+										<button onClick={() => {handleViewDetails(item.id)}}>viewDetails</button>
 									</div>
 								</div>
 							</Item>

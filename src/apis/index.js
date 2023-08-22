@@ -5,3 +5,10 @@ export const getproductListData = async () => {
     const data = await res.json();
     return data
 }
+
+ export const getproductionDetails = async (id) => {
+  console.log("jask",id);
+   const res = await fetch(`${baseURL}/products/${id}`);
+   const data = await res.json();
+   return data
+}

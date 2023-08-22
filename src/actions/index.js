@@ -2,7 +2,8 @@ import {
     GET_PRODUCT_LIST, 
     GET_CAT_LIST,
     GET_FILTERED_LIST,
-    GET_FILTERED_ITEMS
+    GET_FILTERED_ITEMS,
+    GET_PRODUCT_DETAILS
  } from "../types";
 
 export const getProductList = data => {
@@ -31,4 +32,17 @@ export const getFilteredItems = data => {
         type: GET_FILTERED_ITEMS,
         data
     }
+}
+
+
+export const  getproductDetailsApiData = (data)  => {
+    console.log(data);
+     return{
+        type: GET_PRODUCT_DETAILS,
+          data
+          
+     }
+
+
+
 }

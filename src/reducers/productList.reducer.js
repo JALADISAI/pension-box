@@ -1,10 +1,12 @@
+
 import { GET_PRODUCT_LIST, GET_CAT_LIST, GET_FILTERED_LIST, GET_FILTERED_ITEMS } from "../types";
 
 const initialState = {
     list: [],
     catList: [],
     filteredList: [],
-    filteredItems: []
+    filteredItems: [],
+    
 }
 
 export default function productListReducer(state = initialState, action) {
