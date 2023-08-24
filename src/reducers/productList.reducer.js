@@ -1,11 +1,13 @@
 
-import { GET_PRODUCT_LIST, GET_CAT_LIST, GET_FILTERED_LIST, GET_FILTERED_ITEMS } from "../types";
+import { GET_PRODUCT_LIST, GET_CAT_LIST, GET_FILTERED_LIST,
+     GET_FILTERED_ITEMS,GET_ITEMID,  GET_VIEW_DETAILS } from "../types";
 
 const initialState = {
     list: [],
     catList: [],
     filteredList: [],
     filteredItems: [],
+
     
 }
 
@@ -35,7 +37,21 @@ export default function productListReducer(state = initialState, action) {
                 ...state,
                 filteredItems: action.data
             }
-        }
+        } 
+         
+        case GET_VIEW_DETAILS: {
+            return {
+         ... state,
+         viewdetails: action.data 
+         
+     }
+    }
+          case GET_ITEMID: {
+          return {
+             ...state,
+             itemid: action.data
+          }
+        } 
         default:
             return state
     }

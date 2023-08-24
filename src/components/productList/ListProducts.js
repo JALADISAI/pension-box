@@ -20,6 +20,7 @@ const ListProducts = (props) => {
 		setProductDetails(true);
       props.handleViewDetailsClick(id)
 	}
+	console.log("ssss",props.productList);
     return(
         <div>
 			<div style={{display: `inline-block`, width: `20%`, position: `fixed`}}>
